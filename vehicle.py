@@ -37,5 +37,30 @@ class Vehicle:
 
         vehicle_map[prev_y][prev_x] = " "
         vehicle_map[new_x][new_y] = "V"
+
+    def get_valid_next_step(self, road_map, WIDTH, HEIGHT):
+        options = ["up", "down", "left", "right"]
+        ROAD_CHARS = {"─", "+", "|"}
+
+        x,y = self.POSITION
+
+        if x == WIDTH - 1:
+            options.remove("right")
+        if x == 0:
+            options.remove("left")
+        if y == HEIGHT - 1:
+            options.remove("down")
+        if y == 0:
+            options.remove("up")
+
+        if road_map[x + 1][y] not in ROAD_CHARS:
+            options.remove("right")
+        if road_map[x - 1][y] not in ROAD_CHARS:
+            options.remove("left")
+        if road_map[x][y + 1] not in ROAD_CHARS:
+            options.remove("down")
+        if road_map[x][y - 1] not in ROAD_CHARS:
+            options.remove("up")
+        
         
 
