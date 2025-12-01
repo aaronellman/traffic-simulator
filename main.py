@@ -17,13 +17,12 @@ def main():
     ]
 
     map = Map(road_map, vehicle_map)
-    map.construct_road()
-
+    
     #Game Loop
-    while False:
+    while True:
         clear_terminal()
-        #map.display_traffic()
-        time.sleep(0.2)    
+        map.construct_road()
+        time.sleep(0.15)    
 
 
 if __name__ == "__main__":
