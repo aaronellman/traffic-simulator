@@ -1,6 +1,7 @@
 import time
 from map import Map
 from terminal_operations import clear_terminal
+from vehicle import Vehicle
 
 def main():
 
@@ -17,6 +18,7 @@ def main():
     ]
 
     map = Map(road_map, vehicle_map)
+    vehicle = Vehicle(vehicle_map)
     
     #Game Loop
     while True:
