@@ -24,7 +24,8 @@ def main():
     while True:
         clear_terminal()
         map.construct_road()
-        time.sleep(0.15)    
+        vehicle.move("right",vehicle_map)
+        time.sleep(2)    
 
 
 if __name__ == "__main__":
